@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class player : MonoBehaviour {
+public class movement : MonoBehaviour {
 
 	public Animator anim;
 	public Rigidbody rbody;
@@ -65,8 +65,8 @@ public class player : MonoBehaviour {
 		anim.SetFloat("inputV",inputV);
 		anim.SetBool ("run",run);
 
-		float moveX = inputH * 20f * Time.deltaTime;
-		float moveZ = inputV * 50f * Time.deltaTime;
+		float moveX = inputH * 40f * Time.deltaTime;
+		float moveZ = inputV * 70f * Time.deltaTime;
 
 		if(moveZ <= 0f)
 		{
@@ -74,8 +74,8 @@ public class player : MonoBehaviour {
 		}
 		else if(run)
 		{
-			moveX*=3f;
-			moveZ*=3f;
+			moveX*=5f;
+			moveZ*=5f;
 		}
 
 		rbody.velocity = new Vector3(moveX,0f,moveZ);
